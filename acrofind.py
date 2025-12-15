@@ -39,7 +39,7 @@ def importAcronymList(file_path: str) -> set[str]:
 
 def importWordDocx(file_path: str) -> str:
         """Extract text from a .docx file."""
-        doc = python-docx.Document(file_path)
+        doc = Document(file_path)
         full_text = []
         for para in doc.paragraphs:
                 full_text.append(para.text)
