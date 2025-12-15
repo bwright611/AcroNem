@@ -14,6 +14,7 @@ Usage:
     python acrofind.py [paths...] [-r] [--min LEN] [--json] [-v]
 If no paths are given, reads from stdin.
 Added a new line here.
+Added a 2nd new line.
 """
 
 
