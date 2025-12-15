@@ -30,6 +30,15 @@ ACRO_RE = re.compile(
 def importAcronymList(file_path: str) -> set[str]:
         return 0
 
+def createWordDocument(acronym_list: list[str], output_path: str) -> None:
+        """Create a Word document with the list of acronyms."""
+        doc = Document()
+        doc.add_heading('Acronym List', 0)
+
+        for acronym in acronym_list:
+                doc.add_paragraph(acronym)
+
+        doc.save(output_path)
 """
  def find_acronyms_in_text(text: str, min_len: int = 2) -> Counter:
         #Return counter of acronyms found in text.
