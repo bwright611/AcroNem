@@ -2,6 +2,7 @@
 
 *.docx
 *.doc
+*.xlsx
 .vscode
 vscode
 
