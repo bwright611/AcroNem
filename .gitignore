@@ -4,6 +4,7 @@
 *.xlsx
 *.xls
 *.doc
+*.xlsx
 .vscode
 vscode
 
