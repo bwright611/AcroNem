@@ -1,6 +1,8 @@
 # Random
 
 *.docx
+*.xlsx
+*.xls
 *.doc
 .vscode
 vscode
