@@ -26,7 +26,7 @@ ACRO_RE = re.compile(
         re.VERBOSE,
 )
 '''
-ACRO_RE = re.compile(r'''
+ACRO_RE = re.compile(r"""
     (                                   # ── whole match ──
         (?:[A-Z]\.){2,}                 #   dotted acronyms:  U.S.A.,  N.A.S.A.
       | \b
@@ -36,14 +36,15 @@ ACRO_RE = re.compile(r'''
           | [A-Z]\d+[A-Z]                 # C5I, X9Y   (cap‑digit‑cap)
           | [A-Z]{2,}                   #   ARROW, ATS, US, WAN …   (plain all‑caps)
           | [A-Z]+(?:[-&/][A-Z]+)+      #   USB‑C, TSM‑X, O&M, AN/PRC (caps separated by – & /)
-          | [a-z]{2,}                   #   bps, ft, km, KPI …      (all‑lower units)
-          | [a-z]+/[a-z]+               #   ft/s                    (lower‑case slash)
-          | [A-Z]{2,}[a-z]+             #   MMWave, MIL‑SPEC        (caps‑then‑lower)
-          | [A-Za-z]*[A-Z][A-Za-z]*[a-z][A-Za-z]*   # mixed‑case with at least one lower‑case letter
+          # | [a-z]+/[a-z]+               #   ft/s                    (lower‑case slash)
+          # | [A-Z]{2,}[a-z]+             #   MMWave, MIL‑SPEC        (caps‑then‑lower)
+          # | [A-Za-z]*[A-Z][A-Za-z]*[a-z][A-Za-z]*   # mixed‑case with at least one lower‑case letter
+          # ---- optional explicit lower‑case units ----
+          | \b(?:bps|ft|km|kpi|mb|gbps|ft/s)\b   # uncomment & edit if you need them
         )
         \b
     )
-''', re.VERBOSE)
+""", re.VERBOSE)
 
 
 def normalize_acronym(s: str) -> str:
